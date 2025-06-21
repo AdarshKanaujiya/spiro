@@ -23,7 +23,10 @@ connectCloudinary()
 
 // Middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: 'https://spiroeducation.netlify.app',
+    credentials: true // only if using cookies or sessions
+  }));
 
 //api endpoints
 app.use('/api/user',userRouter)
